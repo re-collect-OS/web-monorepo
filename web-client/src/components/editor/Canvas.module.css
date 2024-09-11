@@ -1,0 +1,100 @@
+.canvasWrapper {
+  /*position: relative;*/
+  /* Go below toolbar to avoid having to convert from window space to canvas space */
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+  /*contain: layout style size;*/
+  /*pointer-events: all;*/
+
+  user-select: none;
+}
+
+.canvasWrapper.isPanMode {
+  cursor: grab;
+}
+
+.canvasWrapper.isPanMode > * {
+  pointer-events: none;
+}
+
+.canvasWrapper.isPanMode.isPanning {
+  cursor: grabbing;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background-color: #eff2fb;
+}
+
+.background.readOnly {
+  background-color: #efefef;
+}
+
+.canvas {
+  position: absolute;
+  will-change: transform;
+}
+
+.centerTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 704px;
+  height: 424px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  user-select: none;
+  transition: opacity 100ms ease-out;
+}
+
+.centerTop.isHidden {
+  opacity: 0;
+}
+
+.centerTop .centerWrapper {
+  text-align: center;
+}
+
+.centerTop .icon {
+  color: #8a8a8a;
+}
+
+.centerTop .copy {
+  max-width: 350px;
+  margin-top: 20px;
+
+  color: #737373;
+  font-size: 16px;
+  font-weight: 450;
+  line-height: 25px;
+  text-align: center;
+}
+
+.dragSelectRectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(225, 225, 225, 0.4);
+  border: 1px solid #979797;
+  user-select: none;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  z-index: 1;
+  visibility: hidden;
+}

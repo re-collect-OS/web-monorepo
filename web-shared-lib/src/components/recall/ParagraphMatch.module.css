@@ -1,0 +1,20 @@
+.sentence + .sentence {
+  margin-left: 4px;
+}
+
+.sentence.isMatch {
+  font-weight: 600;
+}
+
+/* Quoted Tweet */
+
+.quotedTweetWrapper {
+}
+
+.quotedTweetUsername {
+  color: #666;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  padding: 0 2px;
+  margin-right: 4px;
+}

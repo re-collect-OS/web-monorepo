@@ -1,0 +1,36 @@
+.noteInputWrapper {
+  padding: 12px;
+  min-height: 178px;
+
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.noteInputWrapper:focus-within {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
+  border-color: #fff;
+}
+
+.noteInput {
+  width: 100%;
+  border: 0;
+  outline: 0;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+  font-family: inherit;
+  resize: none;
+  background-color: inherit;
+}
+
+.noteInput::placeholder {
+  color: #666;
+}

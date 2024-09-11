@@ -1,0 +1,102 @@
+.Settings {
+  padding: 40px;
+
+  max-width: 500px;
+}
+
+.sectionsWrapper {
+  margin-top: 20px;
+}
+
+.section {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.section + .section {
+  margin-top: 20px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 12px 0;
+  font-weight: 600;
+  color: #333;
+}
+
+.sectionRow {
+  margin: 12px 0 0 0;
+}
+
+.section a {
+  color: #333;
+}
+
+.success {
+  font-size: 14px;
+  color: #333;
+  background-color: #c3f4e3;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  font-weight: 450;
+}
+
+/* AccountForm */
+
+.AccountForm .form {
+}
+
+.AccountForm .form .formGroup {
+  margin-top: 8px;
+}
+
+.AccountForm .form input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.AccountForm .form input:disabled {
+  background-color: #efefef;
+  color: #777;
+}
+
+.AccountForm .form label {
+  display: block;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.AccountForm .form a {
+  color: #333;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.AccountForm .form .formText {
+  font-size: 14px;
+  margin-top: 12px;
+  color: #666;
+  text-align: center;
+}
+
+.AccountForm .form .formErrorText {
+  font-size: 14px;
+  margin-top: 12px;
+  color: darkred;
+  text-align: center;
+}
+
+.AccountForm .submitButton {
+  margin: 20px 0;
+}

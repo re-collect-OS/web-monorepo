@@ -1,0 +1,47 @@
+.ManageLists {
+  padding: 40px;
+  max-width: 600px;
+
+  line-height: 24px;
+}
+
+.ManageLists.isLoading {
+  padding: 0 40px;
+}
+
+.info {
+  color: #777;
+  font-size: 14px;
+}
+
+.list {
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.checkbox {
+  margin-right: 8px;
+}
+
+.rule {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.toolbar {
+  display: grid;
+  grid-gap: 8px;
+  grid-auto-flow: column;
+}
+
+.error {
+  color: darkred;
+  padding: 12px 22px;
+  background: pink;
+  border-radius: 4px;
+}

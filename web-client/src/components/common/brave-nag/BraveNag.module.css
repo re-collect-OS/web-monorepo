@@ -1,0 +1,40 @@
+@keyframes bounceIn {
+  from {
+    transform: translate3d(0, 200px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.content {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  width: 350px;
+  background-color: #f3f4f3;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+
+  padding: 12px;
+
+  animation: bounceIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 2;
+}
+
+.content a {
+  color: inherit;
+}
+
+.nav {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}

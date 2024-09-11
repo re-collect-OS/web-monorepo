@@ -1,0 +1,232 @@
+/* Toggle Toolbar */
+
+.FloatingToolbar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 12px;
+  z-index: 1;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.FloatingToolbar > *:not(.spacer) {
+  pointer-events: initial;
+}
+
+.spacer {
+  flex: 1 1 100%;
+}
+
+.visualGroup {
+  flex: 0 0 auto;
+
+  background-color: #3d3d3d;
+  padding: 4px;
+  border-radius: 4px;
+
+  color: #fff;
+  border: 0;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 450;
+  transition: background-color 100ms linear;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 4px;
+
+  outline: none;
+}
+
+.visualGroup.isToggle {
+  background-color: #000;
+}
+
+.visualGroup:not(.isToggle):hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.button {
+  border-radius: 4px;
+  border: 0;
+  padding: 0 8px;
+  min-width: 45px;
+  height: 24px;
+
+  background-color: transparent;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.button svg {
+  flex: 0 0 auto;
+}
+
+.button[data-state="on"] {
+  background-color: #414141;
+}
+
+.button.isVioletText {
+  color: #c1c0ff;
+}
+
+.stats:hover .unit {
+  text-decoration: underline;
+}
+
+/* Canvas */
+
+.EditorLayoutCanvas {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+}
+
+.EditorLayoutCanvas .aboveCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.EditorLayoutCanvas .topBar {
+  flex: 0 0 auto;
+
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+
+  pointer-events: initial;
+}
+
+.EditorLayoutCanvas .topBar.isDark {
+  background-color: #575757;
+  color: #fff;
+}
+
+.EditorLayoutCanvas .topBar .leftCol {
+  flex: 1 1 100%;
+}
+
+.EditorLayoutCanvas .topBar .rightCol {
+  flex: 0 0 auto;
+}
+
+.EditorLayoutCanvas .splitEditorWrapper {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+}
+
+.EditorLayoutCanvas .playgroundToolbarWrapper {
+  flex: 1 1 auto;
+
+  position: relative;
+}
+
+.EditorLayoutCanvas .splitEditor {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  height: 100%;
+  width: 100%;
+  max-width: max(var(--split-editor-min-width), calc(100vw - var(--split-editor-width)));
+
+  overflow: hidden;
+
+  pointer-events: initial;
+}
+
+.EditorLayoutCanvas .splitEditor .overflowWrapper {
+  flex: 1 1 auto;
+
+  position: relative;
+  padding: 4% 20px 60px 20px;
+
+  background-color: #fff;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.EditorLayoutCanvas .splitEditor .dragHandle {
+  flex: 0 0 auto;
+
+  width: 10px;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.EditorLayoutCanvas .splitEditor .dragHandle .dragBarIndicator {
+  width: 4px;
+  height: 60px;
+  background-color: #777;
+  margin-left: 3px;
+  border-radius: 4px;
+  opacity: 0.6;
+  transition: opacity 100ms ease-in;
+}
+
+/* - fullscreen editor */
+
+.EditorLayoutCanvas .splitEditor.isFullscreen {
+  max-width: unset;
+  width: 100%;
+}
+
+.EditorLayoutCanvas .splitEditor.isFullscreen .dragHandle {
+  display: none;
+}
+
+/* - hidden editor */
+
+.EditorLayoutCanvas .splitEditor.isHidden {
+  display: none;
+}
+
+/* Menu */
+
+.menu {
+  z-index: 1;
+}

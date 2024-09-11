@@ -1,0 +1,26 @@
+.Downloads {
+}
+
+.contentWrapper {
+  padding: 40px;
+  width: 100%;
+  max-width: 760px;
+
+  background-color: #fff;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+}
+
+.header {
+  flex: 1 1 100%;
+
+  padding: 12px;
+}
+
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+}

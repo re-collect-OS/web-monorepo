@@ -1,0 +1,84 @@
+.BaseDownload {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 12px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  flex: 0 0 auto;
+
+  width: 60px;
+  height: 60px;
+  background-color: #efefef;
+  border-radius: 12px;
+  border: 1px solid #efefef;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.icon img,
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.titleWrapper {
+  flex: 1 1 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 4px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 30px;
+  color: #333;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.isNewIndicator {
+  padding: 0 8px;
+  height: 24px;
+
+  background-color: transparent;
+  border: 1px solid #b94040;
+  color: #b94040;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+}
+
+.description a {
+  color: inherit;
+}
+
+.nav {
+  flex: 0 0 auto;
+}

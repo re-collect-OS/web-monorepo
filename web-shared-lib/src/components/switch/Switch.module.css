@@ -1,0 +1,35 @@
+.SwitchRoot {
+  display: block;
+  position: relative;
+  width: 43px;
+  height: 24px;
+  padding: 0;
+
+  background: #fff;
+  border: 1px solid #a1a1a1;
+  border-radius: 999px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.SwitchRoot:focus {
+  background: #efefef;
+}
+
+.SwitchRoot[data-state="checked"] {
+}
+
+.SwitchThumb {
+  display: block;
+  width: 18px;
+  height: 18px;
+  background: #6a6969;
+  border-radius: 18px;
+  transition: transform 100ms;
+  transform: translateX(3px);
+  will-change: transform;
+}
+
+.SwitchThumb[data-state="checked"] {
+  transform: translateX(20px);
+  background: #6261c5;
+}

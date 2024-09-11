@@ -1,0 +1,98 @@
+.BaseIntegration {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #fff;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.header {
+  flex: 0 0 auto;
+
+  padding: 12px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background-color: #efefef;
+}
+
+.icon {
+  flex: 0 0 auto;
+
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+
+  background-color: #fff;
+  overflow: hidden;
+
+  color: #333;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon img,
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon > img {
+  background-color: #fff;
+}
+
+.loadingIcon {
+  font-size: 15px;
+  height: 26px !important;
+}
+
+.header .titleWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  gap: 12px;
+
+  width: 100%;
+
+  color: #4240b9;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header .titleWrapper .title {
+  flex: 1 1 100%;
+
+  width: 100%;
+  margin: 0;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+  color: #333;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.body {
+  flex: 1 1 100%;
+
+  border-top: 1px solid #ccc;
+  padding: 20px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}

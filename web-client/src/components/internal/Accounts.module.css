@@ -1,0 +1,159 @@
+.Accounts {
+  padding: 20px 32px;
+}
+
+.sortBy {
+  color: #666;
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.accountsTable {
+  width: 100%;
+}
+
+table.accountsTable thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333;
+}
+
+table.accountsTable thead th.moreColumn {
+  width: 42px;
+}
+
+table.accountsTable tr,
+table.accountsTable td,
+table.accountsTable th {
+  padding: 8px 12px;
+  margin: auto;
+  border: none;
+}
+
+table.accountsTable tbody tr:hover {
+  background-color: #efefef;
+}
+
+.MoreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 26px;
+  margin: 0;
+  padding: 0 8px;
+
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: background-color 100ms linear;
+  user-select: none;
+}
+
+.expandedAccountStats {
+  border: 1px solid #ccc;
+  padding: 8px 16px;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+
+  max-width: 600px;
+}
+
+.expandedAccountStats .nav {
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.expandedAccountStats h2 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+table.statsTable {
+  width: 100%;
+}
+
+table.statsTable tbody tr:hover {
+  background-color: #efefef;
+}
+
+table.statsTable tr,
+table.statsTable td,
+table.statsTable th {
+  padding: 4px 0;
+  margin: auto;
+  border: none;
+}
+
+/*  */
+
+.toastContainer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  width: 390px;
+  max-width: 100vw;
+  padding: 12px;
+  margin: 0;
+
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+.toastContainer .toastViewport {
+  margin: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.toastContainer > * {
+  pointer-events: initial;
+}
+
+/* Status */
+
+.statusWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1px;
+}
+
+.statusWrapper .row {
+  width: 20px;
+  height: 20px;
+  border-radius: 2px;
+  background-color: #d9d9d9;
+}
+
+.statusWrapper .row.isOn {
+  background-color: #4240b9;
+}
+
+.statusWrapper .row.isOff {
+}
+
+@keyframes waitingBlink {
+  0% {
+    background-color: #d9d9d9;
+  }
+  20% {
+    background-color: #a09fdc;
+  }
+  100% {
+    background-color: #d9d9d9;
+  }
+}
+
+.statusWrapper .isWaiting {
+  background-color: #a09fdc;
+  animation: waitingBlink 1.4s linear infinite;
+  animation-fill-mode: forwards;
+}

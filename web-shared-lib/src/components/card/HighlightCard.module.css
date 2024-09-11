@@ -1,0 +1,8 @@
+.HighlightCard {
+  color: #111;
+  background-color: #fffcd9;
+}
+
+.HighlightCard.isChildCard {
+  outline-color: #f4dd73;
+}

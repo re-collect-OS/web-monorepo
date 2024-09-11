@@ -1,0 +1,60 @@
+.IconGallery {
+  padding: 20px;
+}
+
+.IconGallery p {
+  color: #777;
+}
+
+.IconGallery a {
+  color: inherit;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.iconGrid {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+
+.iconCell {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  width: 160px;
+  height: 100px;
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  padding: 12px;
+}
+
+.iconCell:hover {
+  background-color: #efefef;
+}
+
+.iconCell .icon {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconCell .icon svg {
+  max-width: 21px;
+}
+
+.iconCell .label {
+  flex: 0 0 auto;
+
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  width: 100%;
+  color: #777;
+
+  word-break: break-all;
+}

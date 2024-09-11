@@ -1,0 +1,11 @@
+.Notifications {
+  padding: 40px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+}
+
+.feed {
+  padding: 0;
+}

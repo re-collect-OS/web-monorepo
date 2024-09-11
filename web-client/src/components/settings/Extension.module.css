@@ -1,0 +1,61 @@
+.Extension {
+  padding: 40px;
+  max-width: 600px;
+}
+
+.wrapper {
+}
+
+.subtitle {
+  display: block;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+}
+
+.strategyList {
+  padding: 0;
+}
+
+.section + .section {
+  margin: 40px 0;
+}
+
+.strategyList li {
+  position: relative;
+
+  list-style: none;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.strategyList li:hover {
+  background-color: #efefef;
+}
+
+.strategyList li input {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+}
+
+.strategyList li label {
+  display: block;
+
+  cursor: pointer;
+
+  padding: 12px 12px 12px 40px;
+
+  line-height: 24px;
+  font-size: 16px;
+}

@@ -1,0 +1,18 @@
+.row {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0;
+}
+
+.count {
+  font-size: 42px;
+  line-height: 58px;
+  color: #333;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 24px;
+  color: #777;
+}

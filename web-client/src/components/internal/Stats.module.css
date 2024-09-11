@@ -1,0 +1,51 @@
+.Stats {
+  padding: 40px;
+}
+
+.cellWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 20px;
+}
+
+.cell {
+  background-color: #efefef;
+  border-radius: 12px;
+  padding: 20px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.cell .title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.cell .info {
+}
+
+.cell .grid {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 12px;
+}
+
+.cell .table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 8px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.cell .table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  width: 50%;
+}
+
+.cell .table td.min {
+  width: 1%;
+  white-space: nowrap;
+}

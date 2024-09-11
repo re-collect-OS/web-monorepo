@@ -1,0 +1,250 @@
+.DailyLog {
+  padding: 40px;
+}
+
+.DailyLogTimeline {
+  max-width: 2866px; /* 5 cols */
+
+  container-type: inline-size;
+}
+
+.DailyLogTimeline .loadingIndicator {
+  margin: 20px;
+}
+
+.DailyLogTimeline .errorWrapper {
+  padding-top: 20px;
+}
+
+.DailyLogTimeline h1 {
+  font-size: 20px;
+  line-height: 28px;
+  color: #111;
+  margin: 24px 20px 24px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.gridCell {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  min-height: 351px;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  border-radius: 8px;
+}
+
+@container (max-width: 933px) {
+  .grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 934px) and (max-width: 1401px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(467px, 1fr));
+  }
+}
+
+@container (min-width: 1402px) and (max-width: 1869px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(467px, 1fr));
+  }
+}
+
+@container (min-width: 1870px) and (max-width: 2337px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(467px, 1fr));
+  }
+}
+
+@container (min-width: 2338px) and (max-width: 2805px) {
+  .grid {
+    grid-template-columns: repeat(5, minmax(467px, 1fr));
+  }
+}
+
+@container (min-width: 2806px) {
+  .grid {
+    grid-template-columns: repeat(6, minmax(467px, 1fr));
+  }
+}
+
+.gridCell .contentRow {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.gridCell .navRow {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.gridCell .navRow > * {
+  visibility: hidden;
+}
+
+.gridCell:hover .navRow > * {
+  visibility: visible;
+}
+
+.gridCell .navRow .removeConfirmation {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}
+
+.gridCell .navRow .removeConfirmation > * {
+  visibility: visible;
+}
+
+.gridCell .navRow .removeConfirmation .leftCol {
+  flex: 1 1 auto;
+
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 450;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.gridCell .navRow .removeConfirmation .rightCol {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+/* gridCell edit state */
+
+.gridCell:focus-within {
+  outline: 2px solid #666;
+  z-index: 1;
+  border-radius: 4px;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+/* Daily note cell */
+
+.gridCell.dailyNoteCell {
+  background-color: #f9f9f9;
+}
+
+.gridCell.dailyNoteCell .navRow > * {
+  visibility: unset;
+}
+
+.noteInput {
+  width: 100%;
+  border: 0;
+  outline: 0;
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #333;
+  font-family: inherit;
+  resize: none;
+  background-color: inherit;
+}
+
+.noteInput::placeholder {
+  color: #666;
+}
+
+/* ContextFooter */
+
+.ContextFooter {
+  width: 100%;
+  padding: 8px 12px 8px 8px;
+  background-color: #f9f9f9;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 4px;
+
+  overflow: hidden;
+  border: 1px solid #b3b3b3;
+  border-radius: 6px;
+
+  text-decoration: none;
+}
+
+.ContextFooter .icon {
+  flex: 0 0 auto;
+  width: 21px;
+  height: 21px;
+  overflow: hidden;
+  color: #333;
+}
+
+.ContextFooter .title {
+  flex: 1 1 auto;
+
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+  color: #333;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.ContextFooter .hostname {
+  flex: 0 0 auto;
+
+  font-size: 12px;
+  line-height: 20px;
+  color: #666;
+}
+
+.ContextFooter:hover {
+  background-color: #efefef;
+}
+
+/* NoteCard */
+.NoteCard {
+  color: #333;
+
+  white-space: pre-wrap;
+}
+
+/* Error */
+.error {
+  background-color: #b94040;
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}

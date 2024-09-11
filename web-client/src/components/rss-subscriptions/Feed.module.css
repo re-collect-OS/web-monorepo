@@ -1,0 +1,288 @@
+/* Feed */
+
+.Feed {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+
+  background-color: #f7f7ff;
+
+  min-height: 279px;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.header {
+  flex: 1 1 100%;
+
+  padding: 12px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.icon {
+  flex: 0 0 auto;
+
+  width: 60px;
+  height: 60px;
+  background-color: #b952e2;
+  border-radius: 12px;
+  overflow: hidden;
+
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon img,
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon > img {
+  background-color: #fff;
+}
+
+.loadingIcon {
+  font-size: 34px;
+  height: 60px !important;
+}
+
+.header .titleWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  padding: 12px;
+
+  color: #4240b9;
+}
+
+.header .titleWrapper .title {
+  flex: 1 1 100%;
+
+  width: 100%;
+  margin: 0;
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 600;
+  text-align: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header .titleWrapper .description {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.nav {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+}
+
+.body {
+  flex: 1 1 100%;
+
+  border-top: 1px solid #ccc;
+  padding: 12px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.body .keyValueRow {
+  font-size: 14px;
+  line-height: 24px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.body .keyValueRow .key {
+  flex: 0 0 auto;
+
+  font-weight: 500;
+  color: #333;
+}
+
+.body .keyValueRow .value {
+  flex: 1 1 100%;
+
+  color: #666;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.body .keyValueRow.isFlipped .key {
+  flex: 1 1 100%;
+}
+
+.body .keyValueRow.isFlipped .value {
+  flex: 0 0 auto;
+}
+
+.body .actionsWrapper {
+  padding-top: 16px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.body .actionsWrapper .unsubscribeButton {
+}
+
+.body .actionsWrapper .deleteContentWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+}
+
+.body .actionsWrapper .deleteContentWrapper input {
+  margin: 0;
+}
+
+/* - expanded state overrides */
+
+.Feed.isExpanded {
+  background-color: #fff;
+}
+
+.Feed.isExpanded .header {
+  flex: 0 0 auto;
+
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 8px;
+
+  background-color: #efefef;
+}
+
+.Feed.isExpanded .icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+}
+
+.Feed.isExpanded .loadingIcon {
+  font-size: 15px;
+  height: 26px !important;
+}
+
+.Feed.isExpanded .titleWrapper {
+  align-items: flex-start;
+  padding: 0;
+}
+
+.Feed.isExpanded .title {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: left;
+
+  color: #333;
+}
+
+.Feed.isExpanded .description {
+  display: none;
+}
+
+/* - paused state overrides */
+
+.Feed.isPaused .header {
+  background-color: #f8f8f8;
+}
+
+.Feed.isPaused .header .titleWrapper {
+  color: #777;
+}
+
+.Feed.isPaused .header .icon {
+  opacity: 0.5;
+}
+
+/* Subscribe Form */
+
+.SubscribeForm {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+
+  height: 100%;
+}
+
+.SubscribeForm .inputFormGroup {
+  flex: 1 1 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+}
+
+.SubscribeForm .processLinksOptInFormGroup {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.SubscribeForm .processLinksOptInFormGroup .label {
+  flex: 1 1 100%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #333;
+}
+
+.SubscribeForm .processLinksOptInFormGroup .shouldProcessLinksSwitch {
+  flex: 0 0 auto;
+}
+
+.SubscribeForm .subscribeButtonWrapper {
+  flex: 0 0 auto;
+
+  padding-top: 16px;
+}
+
+.SubscribeForm .inputFormGroup input {
+  padding: 8px;
+  font-size: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* error */
+
+.error {
+  background-color: #b94040;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}

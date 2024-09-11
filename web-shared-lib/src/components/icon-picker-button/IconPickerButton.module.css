@@ -1,0 +1,25 @@
+.IconPickerButton {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1px;
+
+  border-radius: 4px;
+  border: 1px solid #cdcfd2;
+  background-color: #cdcfd2;
+  overflow: hidden;
+}
+
+.IconPickerButton > .segment:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.IconPickerButton > .segment:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.segment {
+  flex: 0 0 auto;
+  border: 0 !important;
+  border-radius: 0;
+  outline: 0;
+}

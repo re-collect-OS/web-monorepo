@@ -1,0 +1,469 @@
+.hidden {
+  visibility: hidden;
+}
+
+/* Constraints */
+
+.verticalConstraints {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+.horizontalConstraints {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.horizontalConstraints > * {
+  pointer-events: auto;
+}
+
+.spacer {
+  position: relative;
+  flex-shrink: 1;
+  align-self: center;
+}
+
+.spacer.vertical {
+  height: 0;
+}
+
+.spacer.horizontal {
+  width: 0;
+}
+
+/* Recall */
+
+.Recall {
+  position: relative;
+  max-height: min(calc(100vh - 16px), 735px);
+  width: 100%;
+  min-width: 460px; /* was 440px */
+  max-width: 460px;
+  height: 100vh;
+  overflow: hidden;
+
+  background-color: #868686;
+  border-radius: 4px;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+
+  user-select: none;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+/* Drag Bar */
+
+.dragBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 12px;
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+  transition: opacity, background-color 100ms ease-in;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: move;
+  touch-action: manipulation;
+}
+
+.dragBarIndicator {
+  width: 60px;
+  height: 2px;
+  background-color: #a1a1a1;
+  border-radius: 4px;
+  margin-top: 1px;
+  opacity: 0.6;
+  transition: opacity 100ms ease-in;
+}
+
+.dragBar:hover .dragBarIndicator {
+  opacity: 1;
+}
+
+/* Header */
+
+.header {
+  flex: 0 0 auto;
+
+  position: relative;
+  background-color: #f0f0f0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+
+  padding: 12px;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.navWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navWrapper .iconTitle {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 4px;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: #333;
+  font-weight: 450;
+}
+
+.navWrapper .navControls {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.queryInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  background-color: #fff;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+
+  outline: 1px solid #ccc;
+}
+
+.queryInput .inputWrapper {
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.queryInput .toggleFiltersBtn {
+  flex: 0 0 auto;
+}
+
+.queryInput .input {
+  flex: 1 1 100%;
+
+  display: block;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  background: transparent;
+
+  font-size: 16px;
+  line-height: 26px;
+  font-family: inherit;
+  color: #333;
+  resize: none;
+}
+
+.queryInput .input::placeholder {
+  color: #666;
+}
+
+/* Empty State */
+
+.emptyState {
+  flex: 1 1 100%;
+  overflow: hidden;
+
+  background-color: #e6e6e6;
+  padding: 100px 30px;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  color: #666;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 450;
+  text-align: center;
+}
+
+/* Results */
+
+.resultsWrapper {
+  flex: 1 1 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background-color: #f8f8f8;
+
+  padding: 12px;
+}
+
+/* Menu */
+
+.menu {
+  z-index: 1;
+}
+
+/* Stack Poll */
+
+.stackPoll {
+  padding: 20px 0;
+  color: #333;
+}
+
+.stackPollPrompt {
+  text-align: center;
+  width: 100%;
+
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.toggleGroup {
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-auto-flow: dense;
+}
+
+.toggleItem {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  transition: background-color 100ms linear;
+}
+
+.toggleItem[data-state="on"] {
+  background-color: #ecedfb;
+  border-color: rgba(66, 64, 185, 0.28);
+}
+
+.toggleItem:hover {
+  background-color: #e6e6e6;
+}
+
+.toggleItem[data-state="on"]:hover {
+  background-color: #d5d7f6;
+}
+
+/*  */
+
+.StackTabContent {
+  outline: 0;
+}
+
+.StackHeader {
+  width: 100%;
+  margin: 4px 0 12px 0;
+
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.StackTab {
+  flex: 0 1 100%;
+
+  position: relative;
+  width: 100%;
+
+  background-color: #3d3d3d;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 0;
+}
+
+.StackTab + .StackTab {
+  margin-left: 8px;
+}
+
+.StackTab .stackTitleButton {
+  flex: 1 1 100%;
+
+  position: relative;
+  width: 0;
+  min-width: 100%;
+  z-index: 1;
+
+  padding: 0 24px 0 8px;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 12px;
+  line-height: 22px;
+  text-align: left;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+
+.StackTab .stackTitleButton[data-state="active"] {
+  color: #fff;
+}
+
+.StackTab .stackCloseButton {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+
+  background-color: transparent;
+  border-radius: 4px;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 100ms linear;
+}
+
+.StackTab .stackCloseButton svg {
+  color: #9e9e9e;
+}
+
+.StackTab .stackCloseButton:hover {
+  background-color: #000;
+}
+
+.StackTab .stackCloseButton:hover svg {
+  color: #fff;
+}
+
+.StackTab .stackCloseButton:active {
+  border-color: #4240b9;
+}
+
+.StackTab .stackTitleButton[data-state="active"] + .stackCloseButton svg {
+  color: #fff;
+}
+
+.StackTab .progressIndicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  transition: width 0.2s ease-out;
+  background-color: #000;
+}
+
+.StackTab .stackTitleButton[data-state="active"] ~ .progressIndicator {
+  background-color: #8787a7;
+}
+
+/* Stack loading prompt */
+
+.stackLoadingPrompt {
+  min-height: 100px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingPrompt {
+  text-align: center;
+  font-weight: 500;
+  padding: 40px 20px;
+  color: #666;
+}
+
+/* Menu footer menu */
+
+.menuFooterMenu {
+  z-index: 1;
+}
+
+/* Match Nav */
+
+.matchNav {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.matchNav .leftCol {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.matchNav .rightCol {
+  flex: 0 0 auto;
+}
+
+/* Toast Container */
+
+.toastContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: 100%;
+  padding: 12px;
+  margin: 0;
+
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+.toastContainer .toastViewport {
+  width: 100%;
+  margin: 0;
+  padding: 0 8px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.toastContainer > * {
+  pointer-events: initial;
+}

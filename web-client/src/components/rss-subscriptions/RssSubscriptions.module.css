@@ -1,0 +1,109 @@
+.RssSubscriptions {
+}
+
+/* Content */
+
+.contentWrapper {
+  padding: 40px;
+  width: 100%;
+  max-width: 2866px; /* 5 cols */
+  container-type: inline-size;
+
+  background-color: #fff;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 40px;
+}
+
+/* Feed List */
+
+.feedList {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, minmax(467px, 1fr));
+}
+
+@container (max-width: 933px) {
+  .feedList {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 934px) and (max-width: 1401px) {
+  .feedList {
+    grid-template-columns: repeat(2, minmax(467px, 1fr));
+  }
+}
+
+@container (min-width: 1402px) and (max-width: 1869px) {
+  .feedList {
+    grid-template-columns: repeat(3, minmax(467px, 1fr));
+  }
+}
+
+@container (min-width: 1870px) and (max-width: 2337px) {
+  .feedList {
+    grid-template-columns: repeat(4, minmax(467px, 1fr));
+  }
+}
+
+@container (min-width: 2338px) and (max-width: 2805px) {
+  .feedList {
+    grid-template-columns: repeat(5, minmax(467px, 1fr));
+  }
+}
+
+@container (min-width: 2806px) {
+  .feedList {
+    grid-template-columns: repeat(6, minmax(467px, 1fr));
+  }
+}
+
+/* Header */
+
+.header .description p {
+  margin: 0;
+  padding: 0;
+}
+
+.header .description p + p {
+  margin-top: 8px;
+}
+
+.header .description a {
+  color: #777;
+}
+
+.header .description strong {
+  color: #333;
+}
+
+.header .descriptionNav {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+
+  margin-top: 20px;
+}
+
+.header .addSubscriptionBtn {
+  margin-top: 16px;
+}
+
+/* Error */
+
+.error {
+  background-color: #b94040;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+}

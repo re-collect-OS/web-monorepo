@@ -1,0 +1,150 @@
+.Widget {
+  display: inline-block;
+  width: 100%;
+  border-radius: 16px;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 8px;
+
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  flex: 1 1 100%;
+
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  padding: 12px;
+  width: 100%;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nav {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 45px;
+  width: 45px;
+  border-radius: 8px;
+  outline: 1px solid rgba(0, 0, 0, 0.15);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: #777;
+  background-color: transparent;
+  transition: background-color 100ms linear;
+}
+
+.navButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sectionHeader {
+  padding: 4px 12px;
+
+  color: #777;
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 24px;
+}
+
+.loadingIndicator {
+  padding: 0 12px 20px 12px;
+}
+
+.row {
+  width: 100%;
+  padding: 12px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 0;
+}
+
+.row:hover {
+  outline: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.iconRow {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.iconRow .iconRowLabel {
+  flex: 1 1 100%;
+
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: left;
+  color: #333;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.iconRow .iconRowIcon {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  width: 21px;
+
+  color: #333;
+}
+
+.infoHeader {
+  padding: 12px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.infoHeader .infoHeaderTitle {
+  color: #333;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.infoHeader .infoHeaderDescription {
+  color: #777;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.infoHeader .infoHeaderDescription p {
+  margin: 0;
+}

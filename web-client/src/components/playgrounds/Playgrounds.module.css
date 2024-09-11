@@ -1,0 +1,345 @@
+.Playgrounds {
+  padding: 40px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 30px;
+  max-width: 1800px;
+}
+
+.headerWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 20px;
+}
+
+.headerWrapper .leftCol {
+  flex: 1 1 auto;
+}
+
+.headerWrapper .rightCol {
+  flex: 0 0 auto;
+}
+
+.headerWrapper select {
+  font-size: 14px;
+  padding: 4px;
+  border-radius: 4px;
+  border-color: #ccc;
+  font-family: inherit;
+  color: #333;
+}
+
+.menu {
+  z-index: 1;
+}
+
+.sectionInstructions {
+  color: #666;
+  font-size: 14px;
+  line-height: 24px;
+  max-width: 600px;
+}
+
+/*  */
+
+.contentWrapper {
+  container-type: inline-size;
+}
+
+.ideaCardWrapper {
+  display: block;
+
+  display: grid;
+  grid-template-columns: repeat(5, minmax(200px, 1fr));
+  grid-gap: 16px;
+}
+
+@container (max-width: 1064px) {
+  .ideaCardWrapper {
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+  }
+}
+
+@container (max-width: 848px) {
+  .ideaCardWrapper {
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+}
+
+.ideaCard {
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  height: 200px;
+  min-width: 200px;
+  padding: 16px;
+  color: #333;
+
+  user-select: none;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+
+  color: inherit;
+  text-decoration: none;
+
+  overflow: hidden;
+}
+
+.ideaCard:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.ideaCard:has(.moreButton[data-state="open"]) {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.ideaCard .titleWrapper {
+  flex: 1 1 auto;
+
+  z-index: 1;
+}
+
+.ideaCard .title {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.ideaCard .moreButtonWrapper {
+  flex: 0 0 auto;
+}
+
+.ideaCard .moreButton {
+  visibility: hidden;
+}
+
+.ideaCard:hover .moreButton {
+  visibility: visible;
+}
+
+.ideaCard .moreButton[data-state="open"] {
+  visibility: visible;
+}
+
+.ideaCard .info {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  z-index: 1;
+}
+
+.ideaCard .info .count {
+  color: #666;
+  font-size: 14px;
+  line-height: 22px;
+
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.ideaCard .background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0; /* expected to be set inline */
+
+  display: flex;
+  flex-flow: column nowrap;
+
+  color: #cfcfcf;
+
+  pointer-events: none;
+}
+
+.ideaCard .background .cap {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.ideaCard .background .fill {
+  flex: 1 1 auto;
+  background-color: currentColor;
+  width: 100%;
+  height: 100%;
+}
+
+/* - pinned overwrites */
+
+.ideaCard.isPinned {
+  border: 1px solid #a09fdc;
+
+  color: #4240b9;
+}
+
+.ideaCard.isPinned .info .count {
+  color: inherit;
+}
+
+.ideaCard.isPinned .background {
+  color: #d9d9f1;
+}
+
+/*  */
+
+.ideaCard.addIdeaButton {
+  background-color: #4240b9;
+  color: #fff;
+  border-color: transparent;
+}
+
+.ideaCard.addIdeaButton:hover {
+  background-color: #3a38a1;
+}
+
+/* - collapsed overrides */
+
+.ideaCardWrapper.isCollapsed {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0;
+}
+
+.ideaCardWrapper.isCollapsed .ideaCard {
+  min-height: 48px;
+  height: auto;
+  width: 100%;
+
+  padding: 12px 16px;
+  margin: 0;
+  flex-flow: row nowrap;
+  border: 0;
+}
+
+.ideaCardWrapper.isCollapsed .ideaCard .title {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.ideaCardWrapper.isCollapsed .ideaCard .info {
+  position: relative;
+}
+
+.ideaCardWrapper.isCollapsed .ideaCard .info .moreButtonWrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.ideaCardWrapper.isCollapsed .ideaCard:not(.addIdeaButton):hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.ideaCardWrapper.isCollapsed .ideaCard:hover .info {
+  visibility: hidden;
+}
+
+.ideaCardWrapper.isCollapsed .ideaCard:has(.moreButton[data-state="open"]) .info {
+  visibility: hidden;
+}
+
+.ideaCardWrapper.isCollapsed .ideaCard.addIdeaButton {
+  margin: 0 0 16px 0;
+}
+
+/*  */
+
+.toastContainer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  width: 390px;
+  max-width: 100vw;
+  padding: 12px;
+  margin: 0;
+
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+.toastContainer .toastViewport {
+  margin: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.toastContainer > * {
+  pointer-events: initial;
+}
+
+/* Tab Bar */
+
+.TabBar {
+  height: 42px;
+  max-width: 600px;
+  width: 100%;
+
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+  overflow: hidden;
+
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.TabBar.isCollapsed {
+  flex-flow: column nowrap;
+  height: unset;
+}
+
+.TabBar .separator {
+  flex: 0 0 auto;
+
+  width: 1px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.TabBar.isCollapsed .separator {
+  height: 1px;
+  width: 100%;
+}
+
+.TabBar .tabBtn {
+  flex: 1 1 100%;
+
+  border: 0;
+  border-radius: 0px;
+  background-color: #fff;
+  color: #777;
+
+  padding: 8px 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+}
+
+.TabBar .tabBtn .tabBtnLabel {
+  font-weight: 550;
+}
+
+.TabBar .tabBtn:hover {
+  background-color: #efefef;
+}
+
+.TabBar .tabBtn.isActive {
+  color: #4240b9;
+  background-color: #ededff;
+}

@@ -1,0 +1,151 @@
+.Invitations {
+  padding: 40px;
+}
+
+.extendInvitationForm {
+  margin: 32px 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+}
+
+.extendInvitationForm .inputFormGroup {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.extendInvitationForm .emailOptInFormGroup label {
+  font-size: 14px;
+  line-height: 21px;
+  color: #777;
+}
+
+.extendInvitationForm .emailOptInFormGroup input {
+  margin: 0 8px 0 0;
+}
+
+.extendInvitationForm input {
+  flex: 1 1 100%;
+  padding: 8px;
+  font-size: inherit;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.extendInvitationForm .buttonWrapper {
+  width: 300px;
+}
+
+.invitationsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.invitationsTable tr:hover {
+  background-color: #f4f4f4;
+}
+
+.invitationsTable td {
+  padding: 12px;
+  margin: 0;
+  border: 0;
+}
+
+.invitationsTable td.dateRow {
+  min-width: 130px;
+}
+
+.invitationRow {
+  border: 1px solid #ccc;
+}
+
+.invitationRow.fail {
+  background-color: #f3dbdc;
+}
+
+.invitationRow.warn {
+  background-color: #fff9e1;
+}
+
+.invitationRow.success {
+  background-color: #f5fbec;
+}
+
+.invitationRow.success .email {
+  text-decoration: line-through;
+}
+
+.email {
+  font-weight: 500;
+}
+
+.detail,
+.registeredEmail {
+  color: #444;
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.date,
+.status {
+  color: #777;
+  font-size: 14px;
+}
+
+.emailCell {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.emailCell .header {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.MoreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 26px;
+  margin: 0;
+  padding: 0 8px;
+
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: background-color 100ms linear;
+  user-select: none;
+}
+
+/*  */
+
+.toastContainer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  width: 390px;
+  max-width: 100vw;
+  padding: 12px;
+  margin: 0;
+
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+.toastContainer .toastViewport {
+  margin: 0;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.toastContainer > * {
+  pointer-events: initial;
+}

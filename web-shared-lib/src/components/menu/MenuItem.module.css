@@ -1,0 +1,93 @@
+.MenuItem {
+  width: 100%;
+
+  padding: 8px 12px;
+  border: 0;
+  user-select: none;
+  cursor: pointer;
+  outline: 0;
+
+  font-size: 14px;
+  line-height: 21px;
+  color: #333;
+  background-color: #fff;
+  font-weight: 450;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+
+.MenuItem:hover {
+  background-color: #f2f2f2;
+}
+
+.MenuItem[data-disabled] {
+  color: #aaa;
+}
+
+.MenuItem[data-disabled]:hover {
+  background-color: inherit;
+}
+
+.MenuItem:focus {
+  background-color: #f2f2f2;
+}
+
+.MenuItem.isDestructive {
+  color: #b94040;
+}
+
+.MenuItem.isViolet {
+  color: #4240b9;
+}
+
+.MenuItem:has(.icon) {
+  padding-left: 8px;
+}
+
+.MenuItem:has(.isEndIcon) {
+  padding-left: 12px;
+  padding-right: 8px;
+}
+
+.icon {
+  flex: 0 0 auto;
+  width: 21px;
+  height: 21px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  flex: 1 1 100%;
+}
+
+.MenuItemSeparator {
+  height: 1px;
+  width: 100%;
+  background-color: #ccc;
+}
+
+.MenuItemInput {
+  padding: 0;
+}
+
+.MenuItemInput input {
+  outline: 0;
+  border: 0;
+  padding: 8px;
+  margin: 4px;
+  border-radius: 2px;
+  background-color: #efefef;
+  width: calc(100% - 8px);
+  height: 100%;
+  font-size: 14px;
+  line-height: 21px;
+  color: #333;
+  font-family: inherit;
+  font-weight: inherit;
+}

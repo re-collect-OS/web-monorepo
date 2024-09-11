@@ -1,0 +1,92 @@
+.RecallResults {
+}
+
+.container {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+}
+
+.loadingPrompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px;
+
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* paragraph section */
+
+.paragraphSection {
+  position: relative;
+
+  padding: 8px 12px;
+  line-height: 24px;
+  overflow-wrap: break-word;
+
+  color: inherit;
+  font-weight: inherit;
+  display: block;
+  text-decoration: none;
+}
+
+.paragraphSection img {
+  max-width: 100%;
+  display: block;
+
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+
+  background-color: #fff;
+}
+
+/* Disabled hover UI 8/14/23 */
+/*.paragraphSection:hover {
+  background-color: #f9f9f9;
+}*/
+
+.paragraphSection + .paragraphSection {
+  border-top: 1px solid #cfcfcf;
+}
+
+.paragraphSection .nav {
+  /*  position: absolute;
+  bottom: 8px;
+  right: 8px;
+
+  visibility: hidden;
+*/
+  margin: 8px 0 4px 0;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+/*.paragraphSection:hover .nav {
+  visibility: visible;
+}
+
+.paragraphSection .nav:has(button[data-state="open"]) {
+  visibility: visible;
+}*/
+
+.paragraphSection .isMatch {
+  background-color: #f5f5ff;
+}
+
+.paragraphSection.isMarkedGood {
+  background-color: #fafaff;
+  color: #4240b9;
+}
+
+.paragraphSection.isMarkedGood .isMatch {
+  background-color: #fafaff;
+}

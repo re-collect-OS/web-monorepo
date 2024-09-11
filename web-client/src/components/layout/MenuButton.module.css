@@ -1,0 +1,94 @@
+.MenuButton {
+  position: relative;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  gap: 8px;
+
+  height: 41px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 0;
+  transition: background-color 100ms linear;
+
+  color: #65676b;
+  background-color: #fff;
+
+  user-select: none;
+}
+
+.MenuButton:hover {
+  background-color: #efefef;
+}
+
+.MenuButton.isActive {
+  color: #4240b9;
+  background-color: #ededff;
+}
+
+.MenuButton.isActive:hover {
+  background-color: #ededff;
+}
+
+.MenuButton.isCollapsed {
+  width: 41px;
+
+  justify-content: center;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 21px;
+  width: 21px;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 550;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.TooltipContent {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  overflow: hidden;
+
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 550;
+
+  opacity: 0;
+
+  transform: translateX(8px);
+  animation: slide-in 150ms forwards ease-out;
+  z-index: 1;
+}
+
+.isNewIndicator {
+  position: absolute;
+  right: 8px;
+  top: 10px;
+
+  padding: 4px 8px;
+
+  background-color: transparent;
+  border: 1px solid #b94040;
+  color: #b94040;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+}

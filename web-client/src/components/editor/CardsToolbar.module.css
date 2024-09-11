@@ -1,0 +1,24 @@
+.Toolbar {
+  padding: 8px 12px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.moveActions {
+  display: grid;
+  grid-gap: 8px;
+  grid-auto-flow: column;
+}
+
+.cardActions {
+  display: grid;
+  grid-gap: 8px;
+  grid-auto-flow: column;
+}
+
+.moreMenu {
+  z-index: 1;
+}

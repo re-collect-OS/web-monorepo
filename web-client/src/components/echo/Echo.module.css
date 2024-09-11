@@ -1,0 +1,22 @@
+.Echo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.code {
+  display: block;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #efefef;
+
+  word-break: break-all;
+  overflow-wrap: anywhere;
+
+  font-family: monospace;
+
+  display: flex;
+  gap: 12px;
+  flex-flow: column nowrap;
+}

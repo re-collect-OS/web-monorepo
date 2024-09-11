@@ -1,0 +1,15 @@
+.KeptCard {
+  color: #111;
+  background-color: #fffcd9;
+}
+
+.KeptCard.isChildCard {
+  outline-color: #f4dd73;
+}
+
+.footer,
+.footer:hover /* Override inherited AttributeHeader hover styles */ {
+  border-top: 1px solid #f4dd73;
+  background-color: rgba(244, 221, 115, 0.3);
+  padding: 8px 12px;
+}

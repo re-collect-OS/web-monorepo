@@ -1,0 +1,73 @@
+.Tour {
+  height: 100vh;
+  width: 100vw;
+}
+
+.Tour a {
+  text-decoration: none;
+  color: #4240b9;
+  font-weight: 500;
+}
+
+.Tour a:hover {
+  text-decoration: underline;
+}
+
+.Tour p {
+  line-height: 24px;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.leftCol {
+  position: relative;
+
+  flex: 1 1 50%;
+
+  padding: 2vw;
+
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.leftCol .logo {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+}
+
+.rightCol {
+  flex: 1 1 50%;
+
+  padding: 2vw;
+
+  background: rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.rightCol .content {
+  max-width: 600px;
+}
+
+.button {
+  margin-top: 20px;
+}
+
+.video {
+  overflow: hidden;
+  border-radius: 20px;
+
+  width: 100%;
+}

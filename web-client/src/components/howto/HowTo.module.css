@@ -1,0 +1,30 @@
+.HowTo {
+  padding: 5vw;
+}
+
+.HowTo a {
+  text-decoration: none;
+  color: #4240b9;
+  font-weight: 500;
+}
+
+.HowTo a:hover {
+  text-decoration: underline;
+}
+
+.HowTo p {
+  line-height: 24px;
+}
+
+.wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video {
+  margin-top: 40px;
+}
+
+.button {
+  margin-top: 20px;
+}

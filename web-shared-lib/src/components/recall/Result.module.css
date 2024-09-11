@@ -1,0 +1,73 @@
+/*  */
+
+.Card {
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+
+  background-color: #fff;
+  font-size: 14px;
+  color: #111111;
+  user-select: text;
+
+  outline: 1px solid #b3b3b3;
+  margin: 0;
+  overflow: hidden;
+}
+
+.Card:hover {
+  outline-width: 2px;
+  outline-color: #666;
+}
+
+.Card:last-child {
+  margin-bottom: 0;
+}
+
+.Card.isSelected {
+  outline-color: rgba(0, 0, 0, 0.5);
+}
+
+.Card.isGraphResult {
+  background-color: #ededff;
+}
+
+.body {
+  line-height: 24px;
+  overflow-wrap: break-word;
+}
+
+/* Limit results to 1 child */
+.Card:not(.isExpanded) .resultSection:nth-child(n + 2) {
+  display: none;
+}
+
+.expandRowButton {
+  width: 100%;
+  padding: 4px;
+  color: #666;
+  text-align: center;
+  border: 0;
+  border-top: 1px solid #ddd;
+  background-color: transparent;
+  font-size: 12px;
+  line-height: 20px;
+
+  transition: background-color 100ms linear;
+}
+
+.expandRowButton:hover {
+  background-color: #efefef;
+  color: #333;
+}
+
+.header {
+  padding: 7px 12px 8px 12px; /* shaved 1px off the top to make up for the border */
+  min-height: 56px; /* 8 + 40 + 8 */
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}

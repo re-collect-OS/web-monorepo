@@ -1,0 +1,62 @@
+.IntegrationSummary {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  padding: 12px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  flex: 0 0 auto;
+
+  width: 60px;
+  height: 60px;
+  background-color: #efefef;
+  border-radius: 12px;
+  border: 1px solid #efefef;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.icon img,
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.titleWrapper {
+  flex: 1 1 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 4px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 30px;
+  color: #333;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+}
+
+.description a {
+  color: inherit;
+}
+
+.nav {
+  flex: 0 0 auto;
+}

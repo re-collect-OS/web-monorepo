@@ -1,0 +1,176 @@
+.Step {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.Step a {
+  color: inherit;
+}
+
+.todoList {
+  list-style: square outside none;
+}
+
+.todoList li {
+  padding: 4px 0;
+}
+
+.todoList li.isDone {
+  text-decoration: line-through;
+  color: #666;
+}
+
+.todoList li.isDone::after {
+  content: "(done)";
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.todoList li.notSupported {
+  text-decoration: line-through;
+  color: #666;
+}
+
+p.browserNote {
+  color: #b94040;
+}
+
+.error {
+  background-color: #b94040;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.Step p {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 22px 0;
+}
+
+.Step small {
+  color: #666;
+}
+
+.Step details {
+  margin-top: 24px;
+}
+
+.Step details summary {
+  color: #4240b9;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.Step details p {
+  padding-left: 14px;
+  color: #5a58a1;
+}
+
+.Step details ul {
+  padding: 0 12px;
+  list-style-type: none;
+}
+
+.Step details li + li {
+  margin-top: 8px;
+}
+
+.Step details a {
+  text-decoration: none;
+  color: #5a58a1;
+  font-weight: 500;
+}
+
+.Step details a:hover {
+  text-decoration: underline;
+}
+
+.Step .stepNavHeader {
+  margin-top: 24px;
+}
+
+.Step strong {
+  font-weight: 500;
+}
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  height: 60px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .stepLogo {
+  margin: 0 20px;
+}
+
+.header .leftCol {
+  flex: 0 0 auto;
+}
+
+.header .rightCol {
+  flex: 0 0 auto;
+}
+
+.stepContentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: calc(100% - 60px);
+}
+
+.stepContentWrapper.hasFixedNav {
+  padding-bottom: 80px;
+}
+
+.stepInlineNav {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 32px;
+  gap: 8px;
+}
+
+.stepColumnNav {
+  display: grid;
+  grid-gap: 8px;
+  grid-auto-columns: auto;
+  margin-top: 24px;
+}
+
+.stepColumnNav .navButton,
+.stepInlineNav .navButton {
+  max-width: 300px;
+}
+
+.stepContent {
+  max-width: 700px;
+  padding: 20px;
+
+  margin: 0 auto;
+}
+
+.submitLoadingMessage {
+  font-weight: 500;
+  color: #4240b9;
+}
+
+.submitLoadingMessage .loadingIndicatorWrapper {
+  padding: 20px 0;
+}

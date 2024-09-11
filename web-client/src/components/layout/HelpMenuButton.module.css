@@ -1,0 +1,21 @@
+.HelpMenuButton {
+  outline: none;
+}
+
+.HelpMenuButton[data-state="open"] {
+  background-color: #efefef;
+}
+
+.menu {
+  width: 298px;
+
+  z-index: 1;
+}
+
+.menuItem {
+  padding: 12px;
+}
+
+.feedbackMenuItem {
+  color: #4240b9;
+}

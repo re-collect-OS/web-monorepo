@@ -1,0 +1,50 @@
+.RTE a {
+  color: #4240b9;
+  line-height: 1em;
+}
+
+.RTE h1 {
+  font-size: 28px;
+  line-height: 34px;
+  margin-bottom: 4%;
+}
+
+.RTE ul,
+.RTE ol {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.RTE ul {
+  list-style-type: disc;
+}
+
+.RTE ul ul {
+  list-style-type: disc;
+}
+
+.RTE ul ul ul {
+  list-style-type: disc;
+}
+
+.RTE ol {
+  list-style-type: decimal;
+}
+
+.RTE ol ol {
+  list-style-type: decimal;
+}
+
+.RTE ol ol ol {
+  list-style-type: decimal;
+}
+
+.isHighlighted {
+  background-color: #fdf1ba;
+  cursor: pointer;
+  transition: background-color 80ms ease-out;
+}
+
+.isHighlighted:hover {
+  background-color: #fce788;
+}

@@ -1,0 +1,23 @@
+.ChangeLogBadge {
+  width: 100%;
+  text-align: left;
+}
+
+.ChangeLogBadge .link {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-top: 12px;
+}
+
+.version {
+  color: #666;
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 25px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  user-select: none;
+}

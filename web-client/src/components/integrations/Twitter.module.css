@@ -1,0 +1,89 @@
+.twitterIcon {
+  width: 80% !important;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 450;
+  color: #333;
+}
+
+.section {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.section .title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.keyValueRow {
+  width: 100%;
+
+  font-size: 14px;
+  line-height: 24px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.keyValueRow .key {
+  flex: 1 1 100%;
+
+  font-weight: 450;
+  color: #333;
+}
+
+.keyValueRow .value {
+  flex: 0 0 auto;
+
+  color: #666;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.deleteContentWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+
+  font-size: 14px;
+  line-height: 24px;
+  color: #333;
+}
+
+.error {
+  background-color: #b94040;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.separator {
+  background-color: #ccc;
+  height: 1px;
+  width: 100%;
+  margin: 12px 0;
+}

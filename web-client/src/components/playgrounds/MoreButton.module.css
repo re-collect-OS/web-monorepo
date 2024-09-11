@@ -1,0 +1,15 @@
+.MoreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 21px;
+  margin: 0;
+  padding: 0 12px;
+
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: background-color 100ms linear;
+  user-select: none;
+}

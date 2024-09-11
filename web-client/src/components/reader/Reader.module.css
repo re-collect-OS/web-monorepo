@@ -1,0 +1,517 @@
+.ReaderModal {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  inset: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.centerPrompt {
+  color: #666;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Article */
+
+.article {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  padding: 40px;
+}
+
+.article .content {
+  max-width: 800px;
+}
+
+.article.isLoadingNoContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.article .title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 4px;
+
+  word-break: break-word;
+}
+
+.article a.url {
+  display: block;
+  font-size: 16px;
+  line-height: 21px;
+  color: #777;
+  margin: 0 0 22px 0;
+  text-decoration: none;
+  word-break: break-all;
+  padding: 4px;
+}
+
+.article a.url:hover {
+  text-decoration: underline;
+}
+
+.article h2 {
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.article p,
+.article li,
+.article blockquote {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.article blockquote {
+  color: #666;
+  border-left: 2px solid #ccc;
+  padding-left: 16px;
+  margin: 12px 0;
+}
+
+.article code {
+  display: inline-block;
+  font-size: inherit;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  background-color: #efefef;
+}
+
+.article ul {
+  margin: 0;
+  padding-inline-start: 1.4em;
+}
+
+.article .content img {
+  max-width: 100%;
+  display: block;
+
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.article .content details {
+  margin-top: 24px;
+}
+
+.article .content details summary {
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.article .content details p {
+  color: #777;
+}
+
+/* Tweet */
+
+.tweetThread {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+
+  /* Simulate flexbox safe center */
+  margin-top: auto;
+  margin-bottom: auto;
+
+  padding: 20px;
+}
+
+.tweetThread .tweet {
+  width: 100%;
+  padding: 32px;
+
+  background-color: #fdfdfb;
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+
+  font-size: 18px;
+  line-height: 1.6;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 12px; /* 16px total with the 4px padding on .rightCol children bc of .block */
+}
+
+.tweetThread .tweet + .tweet {
+  margin-top: 12px;
+}
+
+.tweet .leftCol {
+}
+
+.tweet .rightCol {
+}
+
+.tweet .header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 4px; /* match .block */
+}
+
+.tweet .header .displayName {
+  font-weight: 600;
+}
+
+.tweet .header .userName {
+  color: #777;
+}
+
+.tweet .avatar {
+  overflow: hidden;
+  width: 58px;
+  height: 58px;
+  border-radius: 58px;
+}
+
+.tweet .avatar img {
+  width: 100%;
+  max-height: 100%;
+}
+
+.tweet .url {
+  color: #777;
+  font-size: 14px;
+  line-height: 22px;
+  text-decoration: none;
+
+  padding: 0 4px; /* match .block */
+}
+
+.tweet .url:hover {
+  text-decoration: underline;
+}
+
+/* - tweet media */
+
+.tweet .tweetMediaWrapper {
+  width: 100%;
+  margin: 8px 0;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tweet .tweetPreviewImg {
+  display: block;
+}
+
+.tweet .tweetPreviewImg.one {
+  flex: 100%;
+  max-width: 100%;
+}
+
+.tweet .tweetPreviewImg.two {
+  flex: calc(50% - 8px);
+  max-width: 50%;
+}
+
+.tweet .tweetPreviewImg.three {
+  flex: calc(33% - 8px);
+  max-width: 33%;
+}
+
+.tweet .tweetPreviewImg.four {
+  flex: 25%;
+  max-width: 25%;
+}
+
+.tweet .tweetPreviewImg {
+  width: 100%;
+}
+
+.tweet .tweetPreviewImg img {
+  vertical-align: middle;
+  max-width: 100%;
+  max-height: 450px;
+
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Canvas */
+
+.canvas {
+  height: 100%;
+  width: 100%;
+}
+
+/*   */
+
+.isHighlight {
+  background-color: #fdf1ba;
+  cursor: pointer;
+  transition: background-color 80ms ease-out;
+}
+
+.isHighlight:hover,
+.isHighlight[data-state="open"] {
+  background-color: #fce788;
+}
+
+.isHighlight.isStackCard {
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.isHighlight.isStackCard:hover,
+.isHighlight.isStackCard[data-state="open"] {
+  background-color: #eee;
+}
+
+.block {
+  border: 1px solid transparent;
+  padding: 4px;
+  margin: 4px 0;
+}
+
+.block.hasStackHighlight {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.block.isSparseBlock {
+}
+
+.sparseLocation {
+  color: #666;
+  font-size: 12px;
+  line-height: 20px;
+  user-select: none;
+  padding: 0 0 0 4px;
+  text-transform: capitalize;
+}
+
+.sparseLocationSeparator {
+  color: #efefef;
+  border-top: 1px solid #ccc;
+  margin: 12px 0;
+}
+
+.noteIndicator {
+  display: inline-block;
+  background-color: #fff;
+  color: #888;
+  width: 22px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  border-radius: 2px;
+  border: 0;
+  border: 1px solid #cccccc;
+  transition: color 100ms linear;
+}
+
+.noteIndicator:hover {
+  background-color: #f9f9f9;
+  color: #333;
+  border: 1px solid #888;
+}
+
+.noteIndicator .noteIconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.sentence {
+  word-break: break-word;
+}
+
+.sentence + .sentence {
+  margin-left: 0.3em;
+}
+
+.noteIndicator + .sentence {
+  margin-left: 8px;
+}
+
+.sentence + .noteIndicator {
+  margin-left: 8px;
+}
+
+/*  */
+
+.CloseButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  transition: background-color 100ms linear;
+}
+
+.CloseButton:hover {
+  background-color: #f2f2f2;
+  border-color: #ccc;
+}
+
+.CloseButton:active {
+  border-color: #4240b9;
+}
+
+.CloseButton svg {
+  width: 14px;
+
+  stroke: currentColor;
+}
+
+/* Loading prompt */
+
+.LoadingPrompt {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes loadingBlink {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.LoadingPrompt > span {
+  animation: loadingBlink 1.4s linear infinite;
+  animation-fill-mode: forwards;
+  font-size: 2em;
+  color: #555;
+  opacity: 1;
+}
+
+.LoadingPrompt span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.LoadingPrompt span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Go To Idea Button */
+
+.GoToIdeaButton {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+
+  display: flex;
+  flex-flow: row nowrap;
+
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: background-color 100ms linear;
+
+  border-radius: 4px;
+  width: 300px;
+  color: #fff;
+  text-decoration: none;
+
+  padding: 8px;
+
+  z-index: 1;
+}
+
+.GoToIdeaButton:hover {
+  background-color: #000;
+}
+
+.GoToIdeaButton .leftCol {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.GoToIdeaButton .leftCol .titleIconRow {
+  display: flex;
+  align-items: row nowrap;
+  gap: 4px;
+
+  font-weight: 600;
+}
+
+.GoToIdeaButton .leftCol .instructionsRow {
+  color: #ccc;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.GoToIdeaButton .rightCol {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px;
+}
+
+/* PDF */
+
+.PDFPage + .PDFPage {
+  border-top: 1px solid #ccc;
+  margin-top: 10vh;
+  padding-top: 10vh;
+}
+
+/* YouTube */
+
+.timestamp {
+  flex: 0 0 auto;
+
+  text-decoration: none;
+  color: #777;
+  margin-right: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 31px;
+  border-radius: 4px;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+
+  user-select: none;
+}
+
+.timestamp:hover {
+  background-color: #f7f7ff;
+  color: #4240b9;
+}

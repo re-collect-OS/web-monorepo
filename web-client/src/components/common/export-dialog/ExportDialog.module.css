@@ -1,0 +1,108 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  overflow: auto;
+  z-index: 1;
+  background-color: rgba(232, 232, 232, 0.7);
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 620px;
+  width: calc(100vw - 40px);
+  max-height: calc(100vh - 40px);
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  padding: 40px 60px;
+
+  background: #ffffff;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  color: #111111;
+
+  z-index: 1;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  margin: 0 0 12px 0;
+}
+
+.description {
+  font-weight: 16px;
+  line-height: 32px;
+}
+
+.description .label {
+  display: block;
+  color: #676767;
+  margin: 28px 0 12px 0;
+}
+
+.textarea {
+  width: 100%;
+  height: 300px;
+  margin: 0;
+  padding: 12px;
+  resize: vertical;
+
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Courier New", monospace;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.actions {
+  display: grid;
+  grid-gap: 8px;
+  grid-auto-flow: column;
+}
+
+.actions .button {
+  max-width: 300px;
+}
+
+/*  */
+
+.CloseButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+
+  align-items: center;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  transition: background-color 100ms linear;
+}
+
+.CloseButton:hover {
+  background-color: #f2f2f2;
+  border-color: #ccc;
+}
+
+.CloseButton:active {
+  border-color: #4240b9;
+}
+
+.CloseButton svg {
+  width: 14px;
+}

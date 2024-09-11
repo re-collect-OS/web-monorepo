@@ -1,0 +1,101 @@
+@keyframes slideIn {
+  from {
+    transform: translateY(calc(100% + 12px));
+  }
+  to {
+    transform: translatey(0);
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes swipeOut {
+  from {
+    transform: translateY(var(--radix-toast-swipe-end-y));
+  }
+  to {
+    transform: translateY(calc(100% + 12px));
+  }
+}
+
+.Toast {
+  background-color: #4240b9;
+  color: #fff;
+
+  border-radius: 8px;
+  padding: 12px;
+  border: 0;
+  margin: 0;
+
+  max-width: 100%;
+  width: 100%;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+
+  list-style: none;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.Toast[data-state="open"] {
+  animation: slideIn 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.Toast[data-state="closed"] {
+  animation: hide 100ms ease-in forwards;
+}
+
+.Toast[data-swipe="move"] {
+  transform: translateY(var(--radix-toast-swipe-move-y));
+}
+
+.Toast[data-swipe="cancel"] {
+  transform: translateY(0);
+  transition: transform 200ms ease-out;
+}
+
+.Toast[data-swipe="end"] {
+  animation: swipeOut 100ms ease-out forwards;
+}
+
+.Toast .leftCol {
+  flex: 1 1 auto;
+  overflow: hidden;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.Toast .rightCol {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-weight: 450;
+  font-size: 14px;
+  line-height: 24px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.icon {
+  margin-left: 4px;
+}
