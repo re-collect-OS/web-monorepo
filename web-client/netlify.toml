@@ -1,0 +1,89 @@
+[[headers]]
+  for = "/*"
+    [headers.values]
+      X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+      X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+      Permissions-Policy = "geolocation=(), camera=(), microphone=()"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+      Cache-Control = "private, no-store, no-cache, must-revalidate, proxy-revalidate"
+
+[[headers]]
+  for = "/*.css"
+    [headers.values]
+      Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.js"
+    [headers.values]
+      Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "/*.png"
+    [headers.values]
+      Cache-Control = "public, max-age=31536000"
+
+[build]
+  publish = "build/"
+  command = "npm run install:dependencies; npm run build"
+  functions = "netlify-lambda/"
+
+[context.production]
+  command = "npm run install:dependencies; npm run build:prod"
+
+[context.deploy-preview]
+  command = "npm run install:dependencies; npm run build:demo"
+
+[context.branch-deploy]
+  command = "npm run install:dependencies; npm run build:demo"
+
+[context.dev]
+  command = "npm run install:dependencies; npm run build:dev"
+
+[context.demo]
+  command = "npm run install:dependencies; npm run build:demo"
+
+[context.wip]
+  command = "npm run install:dependencies; npm run build:wip"
+
+[dev]
+  command = "npm run start:netlify:dev"
+  context = "dev"
+  targetPort = 8000
+  port = 3000
+  framework = "next"
+  dir = "build/"
+  publish = "public/"
+  autoLaunch = true
+[[plugins]]
+package = "netlify-plugin-inline-functions-env"
+  [plugins.inputs]
+  buildEvent = "onBuild"
+
+[[plugins]]
+package = "/plugins/netlify/env"
+
+[[redirects]]
+  from = "/internal/dev-extension"
+  to = "https://drive.google.com/drive/folders/1kBzOEHFr7vgeBRNw80_PD9X2Fvu5SUE5"
+  status = 301
+
+[[redirects]]
+  from = "/internal/prod-extension"
+  to = "https://drive.google.com/drive/folders/1rjd5Td6GNXUQudMWc4aU6VHUpIHo8A7m"
+  status = 301
+
+[[redirects]]
+  from = "*"
+  to = "/index.html"
+  status = 200
