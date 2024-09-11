@@ -1,0 +1,139 @@
+.AnnotationPopover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  --headerHeight: 42px;
+}
+
+.container {
+  width: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.header {
+  background: #f0f0f0;
+  height: var(--headerHeight);
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+
+  display: flex;
+  gap: 8px;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 8px 8px 4px;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+  width: 100%;
+  background: #fff;
+  padding: 12px;
+}
+
+.note {
+  width: 100%;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  resize: none;
+
+  font-size: 14px;
+  line-height: 24px;
+  font-family: inherit;
+}
+
+.highlight {
+  min-height: 50px;
+  border-radius: 4px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  display: flex;
+  gap: 8px;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.footer .leftCol {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.footer .leftCol .removeConfirmation {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 450;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.footer .rightCol {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+/* Fixed height popover */
+/* Because we need the popover to transition between flexible and overflowing states
+  seamlessly, we have to fake the layout a bit and abs position the header and footer above the
+  otherwise overflowing container. The only side effect of this is that the scroll bar
+  is full height. For now we hide them but the plan is to draw our own in place:
+*/
+
+.AnnotationPopover.isFixedHeight {
+  height: 100%;
+
+  scrollbar-width: none;
+}
+
+.AnnotationPopover.isFixedHeight::-webkit-scrollbar {
+  display: none;
+}
+
+.AnnotationPopover.isFixedHeight .container {
+  padding: var(--headerHeight) 0;
+}
+
+.AnnotationPopover.isFixedHeight .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.AnnotationPopover.isFixedHeight .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  height: var(--headerHeight);
+  background: #fff;
+  padding: 0 12px;
+}

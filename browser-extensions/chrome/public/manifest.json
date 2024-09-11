@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "re:collect",
+  "version": "0.6.20",
+  "description": "Enabling creators to recall, connect, and develop ideas without breaking their creative flow.",
+  "minimum_chrome_version": "99",
+  "author": "re:collect",
+  "short_name": "re:collect",
+  "homepage_url": "https://re-collect.ai",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAm0bYCqnjTuCOpzngFIOLeHGnEHdCMhOb70cjaxqU7DuVuVeAV5ED4/jhK3xgIs/hiQgpguxnXmEtWwK875ytKKQFFBEHKMVLjZBNZRxaisGRti9fqFuej2rI9q2t6XP9eGYhWBNdLO4nA7qeTt+xPX/L3oJU8y79tRMhSzSGsYK2UQh437JIxuUmXPpC6N3TmJDkb2HXRv2cZaVKbFcFF7MVw4PqQ/aXKV+CWUKLbGPUah9Rzd7CxjYKVCdulCT/S/f20rgSbzuLIg7JDDKmzwer7WrHyTnrUcfFOWMPFS/PIpX5VsIp98rdfuzKZocVv7HD4idtDseInCCCmsJNmwIDAQAB",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "64": "icon64.png",
+    "128": "icon128.png"
+  },
+  "permissions": ["scripting", "tabs", "storage", "history", "contextMenus", "bookmarks", "alarms"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "host_permissions": ["http://*/", "https://*/"],
+  "action": {
+    "default_title": "re:collect",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "externally_connectable": {
+    "matches": [
+      "https://app.re-collect.ai/*",
+      "https://demo.app.re-collect.ai/*",
+      "https://dev.app.re-collect.ai/*",
+      "https://wip.app.re-collect.ai/*",
+      "*://localhost:*/*"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "exclude_matches": [
+        "https://app.re-collect.ai/*",
+        "https://demo.app.re-collect.ai/*",
+        "https://dev.app.re-collect.ai/*",
+        "https://wip.app.re-collect.ai/*",
+        "*://localhost:*/*"
+      ],
+      "js": ["readability/Readability-readerable.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["fonts/*.woff2"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ],
+  "cross_origin_embedder_policy": {
+    "value": "require-corp"
+  },
+  "cross_origin_opener_policy": {
+    "value": "same-origin"
+  }
+}

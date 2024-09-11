@@ -1,0 +1,40 @@
+/* This file is injected into the document.head by the content script */
+/* Make sure to prefix everything with _recollect */
+
+@keyframes _recollectFramedAnnotationPanelMountAnimation {
+  from {
+    transform: translate3d(0, -10px, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+._recollectFramedAnnotationPanel {
+  box-sizing: content-box;
+
+  position: fixed;
+  width: 420px;
+  height: auto;
+
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 40px;
+  outline: 0;
+  overflow: hidden;
+
+  /* Dark mode iframe has white background in Chrome (bug?) */
+  color-scheme: light;
+  z-index: 2147483647;
+
+  /* Must watch the animation start position */
+  transform: translate3d(0, -10px, 0);
+  opacity: 0;
+}
+
+._recollectFramedAnnotationPanel._recollectMounting {
+  animation: _recollectFramedAnnotationPanelMountAnimation 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.175) forwards;
+}

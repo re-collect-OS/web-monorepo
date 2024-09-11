@@ -1,0 +1,54 @@
+/* This file is injected into the document.head by the content script */
+/* Make sure to prefix everything with _recollect */
+
+@keyframes _recollectPopoverMountAnimation {
+  from {
+    transform: translate3d(0, -150%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes _recollectPopoverUnmountAnimation {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, -150%, 0);
+  }
+}
+
+._recollectFramedPopover {
+  box-sizing: content-box;
+
+  position: fixed;
+  width: 440px;
+  height: auto;
+  min-height: 240px; /* MIN_HEIGHT from Popover. In some circumstances it takes the iframe a while to load...*/
+  max-height: calc(100vh - 24px);
+  top: 12px;
+  right: 12px;
+
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0px 40px;
+  outline: 0;
+  overflow: hidden;
+
+  /* Dark mode iframe has white background in Chrome (bug?) */
+  color-scheme: light;
+  z-index: 2147483647;
+
+  /* Hide on mount - must watch the animation start position */
+  transform: translate3d(0, -150%, 0);
+}
+
+._recollectFramedPopover._recollectMounting {
+  animation: _recollectPopoverMountAnimation 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.175) forwards;
+}
+
+._recollectFramedPopover._recollectUnmounting {
+  animation: _recollectPopoverUnmountAnimation 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.175) forwards;
+}

@@ -1,0 +1,61 @@
+.NavBar {
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.NavBar .flex {
+  flex: 1 1 100%;
+}
+
+.NavBar .logoButtonWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+
+  border-radius: 4px;
+  border: 1px solid #cdcfd2;
+}
+
+.NavBar .buttonSegment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+}
+
+.NavBar .buttonSegment:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.NavBar .buttonSegment:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.NavBar .buttonSegment:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.NavBar .logoButton {
+  flex: 0 0 auto;
+
+  padding: 2px 12px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.NavBar .logoButtonSeparator {
+  flex: 0 0 auto;
+
+  width: 1px;
+  height: 100%;
+  background-color: #cdcfd2;
+}
+
+.NavBar .logoButtonMenuTrigger {
+  flex: 0 0 auto;
+
+  padding: 0 2px;
+}

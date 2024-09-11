@@ -1,0 +1,315 @@
+.AuthenticatedUI {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+
+.navWrapper {
+  flex: 0 0 auto;
+
+  background: #f0f0f0;
+  padding: 12px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+
+  border-bottom: 1px solid #ccc;
+}
+
+.noteWrapper {
+  flex: 0 0 auto;
+
+  border-top: 1px solid #ccc;
+  padding: 12px 16px 16px 16px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+}
+
+.noteWrapper.isExpanded {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px -1px 6px;
+}
+
+.noteInput {
+  width: 100%;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  resize: none;
+
+  font-size: 14px;
+  line-height: 24px;
+  font-family: inherit;
+}
+
+.noteControls {
+  display: flex;
+  gap: 8px;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.noteControls .leftCol {
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.noteControls .leftCol .removeConfirmation {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 450;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.noteControls .rightCol {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.queryInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  overflow: hidden;
+
+  background-color: #fff;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+
+  outline: 1px solid #ccc;
+}
+
+.queryInput .inputWrapper {
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.queryInput .toggleFiltersBtn {
+  flex: 0 0 auto;
+}
+
+.queryInput .input {
+  flex: 1 1 100%;
+
+  display: block;
+  width: 100%;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  background: transparent;
+
+  font-size: 16px;
+  line-height: 26px;
+  font-family: inherit;
+  color: #333;
+  resize: none;
+}
+
+.queryInput .input::placeholder {
+  color: #666;
+}
+
+.queryInput .toggleFiltersBtn {
+  flex: 0 0 auto;
+}
+
+.pageTabWrapper {
+  flex: 1 1 100%;
+
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+}
+
+.recallTabWrapper {
+  flex: 1 1 100%;
+
+  width: 100%;
+  background-color: #e6e6e6;
+  padding: 12px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.isHidden {
+  display: none;
+}
+
+.recallTabWrapper .result {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.annotationLogWrapper {
+  flex: 1 1 100%;
+
+  width: 100%;
+  height: 100%;
+  background-color: #e6e6e6;
+  padding: 12px;
+  border-top: 1px solid #ccc;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 12px;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.AuthenticatedUI.isExpanded .annotationLogWrapper {
+  border-top: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.editorHighlightCard {
+  cursor: unset;
+  margin-top: 4px;
+
+  max-height: 165px;
+}
+
+.showAnnotationsBtn {
+  justify-content: flex-start;
+  max-width: unset;
+  width: 100%;
+}
+
+/* Menu */
+
+.menu {
+  z-index: 1;
+}
+
+/* Match Nav */
+
+.matchNav {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.matchNav .leftCol {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+}
+
+.matchNav .rightCol {
+  flex: 0 0 auto;
+}
+
+/* Toast Container */
+
+.toastContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  width: 100%;
+  padding: 12px;
+  margin: 0;
+
+  z-index: 2147483647;
+  pointer-events: none;
+}
+
+.toastContainer .toastViewport {
+  width: 100%;
+  margin: 0;
+  padding: 0 8px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.toastContainer > * {
+  pointer-events: initial;
+}
+
+/* Empty State */
+
+.emptyState {
+  flex: 0 0 auto;
+  overflow: hidden;
+
+  background-color: #e6e6e6;
+  padding: 100px 30px;
+
+  width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 450;
+  text-align: center;
+}
+
+/* Deactivated Notice */
+
+.deactivatedNotice {
+  padding: 20px;
+  color: #333;
+  background-color: #fff;
+
+  height: 100vh;
+}
+
+.deactivatedNotice .logo {
+  margin-bottom: 16px;
+}
+
+.deactivatedNotice .title {
+  font-size: 20px;
+}
+
+.deactivatedNotice .description {
+  font-size: 16px;
+  line-height: 24px;
+  color: #777;
+}
+
+.deactivatedNotice .description a {
+  color: inherit;
+}

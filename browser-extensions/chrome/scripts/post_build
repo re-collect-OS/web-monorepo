@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# This script is executed by the Webpack AfterEmitPlugin post build
+
+DEV_STAGE=dev
+WIP_STAGE=wip
+LOCAL_STAGE=local
+
+if [[ $APP_STAGE == $DEV_STAGE || $APP_STAGE == $WIP_STAGE || $APP_STAGE == $LOCAL_STAGE ]]
+then
+    if [ -f dist/icon48-dev.png ]
+    then
+        sed "s/$(cat keys/prod.sed)/$(cat keys/dev.sed)/" public/manifest.json > dist/manifest_w_key.json
+        sed -i '' "s/re:collect/re:collect (dev)/g" dist/manifest_w_key.json
+        mv dist/manifest_w_key.json dist/manifest.json
+        mv dist/icon48-dev.png  dist/icon48.png
+        mv dist/icon48-dev-submitted.png  dist/icon48-submitted.png
+        mv dist/icon48-dev-error.png  dist/icon48-error.png
+        mv dist/icon48-dev-dark.png  dist/icon48-dark.png
+        mv dist/icon48-dev-dark-submitted.png  dist/icon48-dark-submitted.png
+        mv dist/icon48-dev-dark-error.png  dist/icon48-dark-error.png
+        echo "[!] Set up DEV extension"
+    fi
+fi

@@ -1,0 +1,17 @@
+.Popover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.Popover.isExpanded {
+  height: 100vh;
+}
+
+.Popover.isLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

@@ -1,0 +1,155 @@
+/* This file is injected into the document.head by the content script */
+/* Make sure to prefix everything with _recollect */
+
+/* Minimized Frame */
+
+._recollectMinimizedConstraints {
+  position: fixed;
+  right: 8px;
+  bottom: 8px;
+
+  z-index: 2147483647;
+}
+
+._recollectMinimizedFrameWrapper {
+  position: relative;
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 40px;
+  border-radius: 8px;
+
+  height: 50px;
+  width: 250px;
+}
+
+/* Maximized Frame */
+
+._recollectMaximizedConstraints {
+  box-sizing: border-box;
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+
+  z-index: 2147483647;
+}
+
+._recollectMaximizedFrameWrapper {
+  position: relative;
+
+  width: 100%;
+  height: calc(100vh - 16px);
+}
+
+/* Frame */
+
+._recollectFrameWrapper {
+  position: relative;
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 40px;
+  border-radius: 8px;
+
+  max-height: calc(100vh - 16px);
+  min-height: 253px;
+  height: min(100vh, 650px);
+  max-width: calc(100vw - 16px);
+  min-width: 400px;
+  width: 400px;
+}
+
+iframe._recollectFrame {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  max-width: 100% !important;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+
+  /* Dark mode iframe has white background in Chrome (bug?) */
+  color-scheme: light;
+}
+
+/* Constraints */
+
+._recollectVerticalConstraints {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  pointer-events: none;
+  z-index: 2147483647;
+}
+
+._recollectHorizontalConstraints {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+._recollectHorizontalConstraints > * {
+  pointer-events: auto;
+}
+
+._recollectSpacer {
+  position: relative;
+  flex-shrink: 1;
+  align-self: center;
+}
+
+._recollectSpacer._recollectVertical {
+  height: 0;
+}
+
+._recollectSpacer._recollectHorizontal {
+  width: 0;
+}
+
+/* Dragbar */
+
+._recollectDragBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 12px;
+  width: 100%;
+  border-radius: 6px 6px 0 0;
+
+  opacity: 0.05;
+  transition: opacity 100ms ease-in;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: move;
+  touch-action: manipulation;
+
+  z-index: 1;
+}
+
+._recollectDragBarIndicator {
+  width: 60px;
+  height: 2px;
+  background-color: #a1a1a1;
+  border-radius: 4px;
+  margin-top: 1px;
+  opacity: 0.6;
+  transition: opacity 100ms ease-in;
+}
+
+._recollectDragBar:hover ._recollectDragBarIndicator {
+  opacity: 1;
+}
+
+._recollectFrameWrapper:hover ._recollectDragBar {
+  opacity: 1;
+}
