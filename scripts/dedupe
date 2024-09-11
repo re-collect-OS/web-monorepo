@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Generate stats.json
+npm run stats
+
+# Remove the first line which is an environment print statement 
+cd ../
+ed stats.json  <<<$'1d\nwq\n'
+
+# npm ls [package] to check versions
+
+npx webpack-stats-duplicates stats.json

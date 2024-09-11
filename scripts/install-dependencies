@@ -1,0 +1,15 @@
+#!/bin/sh
+
+echo ""
+echo "Installing web-shared-lib dependencies"
+cd ../web-shared-lib
+npm run install:dependencies
+echo ""
+echo "Installing js-shared-lib dependencies"
+cd ../js-shared-lib
+npm run install:dependencies
+echo ""
+echo "Installing web-client dependencies"
+cd ../web-client
+exec npm install --legacy-peer-deps
+
