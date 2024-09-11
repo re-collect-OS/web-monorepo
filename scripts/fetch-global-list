@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+input=$1
+repository=get_data
+
+# Sparse clone get_data repo
+git clone -n git@github.com:re-collect/${repository}.git --depth 1
+cd $repository
+# Checkout json
+git checkout HEAD $input
+
+# echo contents of file
+echo "$(cat $input)"
+
+# Cleanup
+cd ../
+rm -rf $repository

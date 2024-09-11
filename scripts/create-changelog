@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e
+
+git fetch --force
+
+DEV=${1:-origin/dev}
+PROD=${1:-origin/main}
+
+CURRENT_DEPLOY_DATE=$(git show --quiet --format="%ad" $DEV)
+CURRENT_SHA=$(git show --quiet --format="%H" $DEV)
+NEW_SHA=$(git show --quiet --format="%h" $PROD)
+FULL_NEW_SHA=$(git show --quiet --format="%H" $PROD)
+
+echo "Deploying ($NEW_SHA)"
+echo ""
+echo "Notable changes:"
+echo "- "
+echo ""
+echo "Full changelog ($FULL_NEW_SHA):"
+git --no-pager log --no-merges --reverse --pretty=format:"%h [%an] %s " "$FULL_NEW_SHA".."$CURRENT_SHA"
+echo ""
+echo ""
+echo "Last production merge was on $CURRENT_DEPLOY_DATE:"
+echo "$CURRENT_SHA"
+echo ""
+echo "-- "
+echo "$(git config --get user.name)"
