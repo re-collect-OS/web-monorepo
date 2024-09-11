@@ -1,0 +1,25 @@
+{
+  "name": "js-shared-lib",
+  "version": "0.0.1",
+  "private": true,
+  "description": "",
+  "main": "src/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.js",
+    "./apiLib": "./src/libs/apiLib.js"
+  },
+  "scripts": {
+    "install:dependencies": "./scripts/install-dependencies",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sync-global-no-go-list": "../scripts/fetch-global-list no_go_list.json > src/globalNoGoList.json",
+    "sync-global-no-auto-collect-list": "../scripts/fetch-global-list no_auto_collect_list.json > src/globalNoAutoCollectList.json"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.17.8",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
+  }
+}
