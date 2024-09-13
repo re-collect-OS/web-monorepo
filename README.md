@@ -42,6 +42,3 @@ Docs: https://github.com/re-collect-OS/web-monorepo/blob/main/web-shared-lib/REA
 
 Docs: https://github.com/re-collect-OS/web-monorepo/blob/main/js-shared-lib/README.md
 
-## Scripts
-
-
