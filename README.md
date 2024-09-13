@@ -44,12 +44,4 @@ Docs: https://github.com/re-collect-OS/web-monorepo/blob/main/js-shared-lib/READ
 
 ## Scripts
 
-### Update global lists
 
-The global lists are a currently manually maintained list of domains we've marked as sources we do not want to bring into our system (no-go list) or don't want to automatically ingest (no-auto-collect list).
-
-To update the list modify `no_go_list.json` or `no_auto_collect_list.json` in the [get-data](https://github.com/re-collect/get_data/) repository and then run this command to sync them:
-
-```sh
-./scripts/fetch-global-list
-```
