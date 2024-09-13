@@ -20,7 +20,7 @@ ln -s ../../.env browser-extensions/chrome/.env
 Update the values:
 
 -   `LOCAL_COGNITO_USERPOOL_ID` and `LOCAL_COGNITO_APP_CLIENT_ID`: Get from `.env` in `k8s-backend` repo after you run `setup_local_dev.sh`. This is optional and only used if you want to point your clients to the local backend with `npm run start:local`
--   `SENTRY_AUTH_TOKEN`: Get one from https://recollect-j0.sentry.io/settings/auth-tokens/ or a friend
+-   `SENTRY_AUTH_TOKEN` can be retreived from Sentry.io
 
 ## web-client
 
